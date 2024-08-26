@@ -2,24 +2,12 @@
 
 namespace App\Services;
 
-use App\Contracts\IDummyRequest;
-use App\Exceptions\InvalidResponseException;
+
 use App\Models\ImportableModel;
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
 
 class DummyJsonService
 {
-
-    protected Client $client;
-
-    public function __construct(Client $client)
-    {
-        $this->client = $client;
-    }
 
     public function search(ImportableModel $model, int $limit, int $skip): ?array
     {

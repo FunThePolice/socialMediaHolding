@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(DummyJsonService::class, function () {
-            return new DummyJsonService(new Client(['base_uri' => 'https://dummyjson.com/']));
+            return new DummyJsonService();
         });
     }
 
